@@ -2,10 +2,10 @@ import { useState, Dispatch,SetStateAction, useEffect } from "react";
 import { NodeData } from "../utils/types";
 
 type UseFocusedNodeIndexProps = {
-    node: NodeData[];
+    nodes: NodeData[];
 }
 
-export const useFocusedNodeIndex = ({node}: UseFocusedNodeIndexProps) : [number,Dispatch<SetStateAction<number>> ] => {
+export const useFocusedNodeIndex = ({nodes}: UseFocusedNodeIndexProps) : [number,Dispatch<SetStateAction<number>> ] => {
     const [focusedNodeIndex,setFocusedNodeIndex] = useState(0);
 
     useEffect(()=>{
@@ -14,7 +14,7 @@ export const useFocusedNodeIndex = ({node}: UseFocusedNodeIndexProps) : [number,
                 setFocusedNodeIndex(index =>Math.max(index-1,0))
             }
             if(event.key==="ArrowDown"){
-                setFocusedNodeIndex(index=>Math.min(index+1,node.length-1));
+                setFocusedNodeIndex(index=>Math.min(index+1,nodes.length-1));
             }
         }
         document.addEventListener("keydown", onKeyDown)

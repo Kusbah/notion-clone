@@ -12,7 +12,7 @@ export const Cover = () => {
   };
   return (
     <div className={styles.cover}>
-      <img src="notion-pic.jpg" alt="Cover" className={styles.image} />
+      <img src="ztm-notes.png" alt="Cover" className={styles.image} />
       <button className={styles.button} onClick={onChangeCoverImage}>
         Change cover
       </button>
