@@ -6,7 +6,7 @@ export const usePgaeState = (instialState: page) => {
   const addNode = (node: NodeData, index: number) => {
     setPage((draft) => draft.node.splice(index, 0, node));
   };
-  const removeNodeIndex = (nodeIndex: number) => {
+  const removeNodeByIndex = (nodeIndex: number) => {
     setPage((draft) => draft.node.splice(nodeIndex, 1));
   };
   const changeNodeValue = (nodeIndex: number, value: string) => {
@@ -40,7 +40,7 @@ export const usePgaeState = (instialState: page) => {
     changeNodeType,
     changeNodeValue,
     addNode,
-    removeNodeIndex,
+    removeNodeByIndex,
     setTitle,
     setCoverImage,
     setNode,
